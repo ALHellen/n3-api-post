@@ -17,17 +17,22 @@ const getAll = (request, response) => {
 //   response.status(200).send(contato)
 // }
 
-const verificaDuplicidade = (request, response, nome) => {
+const verificaDuplicidade = (request, response) => {
+
   let dados = request.body
-  if(dados.nome != contatos.model.contatos.nome){
-    dados.id = Math.random().toString(36).substr(-8)
-    contatos.model.contatos.push(dados)
+  let meuBanco = contatos.model.contatos
+  dados.id = Math.random().toString(36).substr(-8)
+
+  if(meuBanco.find(dadox => dadox.nome === dados.nome)){
+    response.status(400).send("Contato já cadastrado")
+  }
+  else
+  {
+    meuBanco.push(dados)
     response.status(200).send(dados)
+    console.log("aqui")
   }
-  else{
-    console.log("Contato já existe.")
-  }
-  
+ 
 }
 
 
@@ -35,4 +40,3 @@ module.exports = {
   getAll,
   verificaDuplicidade
 }
-
