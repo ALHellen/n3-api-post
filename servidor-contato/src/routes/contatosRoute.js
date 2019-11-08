@@ -7,4 +7,5 @@ router.get("/", controller.getAll)
 // router.get("/:id", controller.getById)
 router.post("/criar", bodyParser.json(), controller.verificaDuplicidade)
 
+
 module.exports = router
