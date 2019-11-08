@@ -23,6 +23,11 @@ const verificaDuplicidade = (request, response) => {
   let meuBanco = contatos.model.contatos
   dados.id = Math.random().toString(36).substr(-8)
 
+  if(dados.nome === undefined || dados.dataNascimento === undefined || dados.celular === undefined){
+    response.status(400).send("Insira todos os dados solicitados")
+  }
+  else{
+
   if(meuBanco.find(dadox => dadox.nome === dados.nome)){
     response.status(400).send("Contato já cadastrado")
   }
@@ -32,9 +37,9 @@ const verificaDuplicidade = (request, response) => {
     response.status(200).send(dados)
     console.log("aqui")
   }
- 
 }
 
+}
 
 module.exports = {
   getAll,
