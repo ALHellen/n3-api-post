@@ -25,9 +25,42 @@ function pegarSigno(dataNascimento){
          const ano = parseInt(arrData[2])
          
          var dataNasc = new Date(ano,mes,dia);
-console.log(dataNasc);
+            console.log(dataNasc);
          if(dataNasc > new Date(ano,2,21) && dataNasc < new Date(ano,3,20)){
-           return "Aries"
+            return "Aries"
+          }
+          else if(dataNasc > new Date(ano,3,21) && dataNasc < new Date(ano,4,20)){
+          return "Touro"
+          }
+          else if(dataNasc > new Date(ano,4,21) && dataNasc < new Date(ano,5,20)){
+              return "Gêmeos"
+          }
+          else if(dataNasc > new Date(ano,5,21) && dataNasc < new Date(ano,6,20)){
+            return "Câncer"
+          }
+          else if(dataNasc > new Date(ano,6,21) && dataNasc < new Date(ano,7,20)){
+            return "Leão"
+          }
+          else if(dataNasc > new Date(ano,7,21) && dataNasc < new Date(ano,8,20)){
+            return "Virgem"
+          }
+          else if(dataNasc > new Date(ano,8,21) && dataNasc < new Date(ano,9,20)){
+            return "Libra"
+          }
+          else if(dataNasc > new Date(ano,9,21) && dataNasc < new Date(ano,10,20)){
+            return "Escorpião"
+          }
+          else if(dataNasc > new Date(ano,10,21) && dataNasc < new Date(ano,11,20)){
+            return "Sagitário"
+          }
+          else if(dataNasc > new Date(ano,11,21) && dataNasc < new Date(ano,1,20)){
+            return "Capricórnio"
+          }
+          else if(dataNasc > new Date(ano,1,21) && dataNasc < new Date(ano,2,20)){
+            return "Aquário"
+         }
+         else{
+           return "Peixes"
          }
          
 }
@@ -52,7 +85,7 @@ const verificaDuplicidade = (request, response) => {
       console.log(dados);
       meuBanco.push(dados);
       response.status(200).send(dados)
-      console.log("aqui")
+      console.log("Oi " + dados.nome + ", estou feliz que você é do signo de " + dados.signo)
     }
   }
 
