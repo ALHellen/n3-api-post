@@ -58,15 +58,15 @@ function pegarSigno(dataNascimento){
           }
           else if(dataNasc > new Date(ano,1,21) && dataNasc < new Date(ano,2,20)){
             return "Aquário"
-         }
-         else{
-           return "Peixes"
-         }
+          }
+          else{
+            return "Peixes"
+          }
          
 }
 
 
-const verificaDuplicidade = (request, response) => {
+const adicionaContato = (request, response) => {
 
   let dados = request.body
   let meuBanco = contatos.model.contatos
@@ -93,5 +93,5 @@ const verificaDuplicidade = (request, response) => {
 
 module.exports = {
   getAll,
-  verificaDuplicidade
+  adicionaContato
 }
